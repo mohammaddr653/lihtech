@@ -10,10 +10,9 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        sfLight: ["var(--font-sflight)"],
-        sfMed: ["var(--font-sfmed)"],
-        sfBold: ["var(--font-sfbold)"],
-        sfProBold: ["var(--font-sfProBold)"],
+        sfLight: ["var(--font-sf-light)"],
+        sfMed: ["var(--font-sf-medium)"],
+        sfBold: ["var(--font-sf-bold)"],
       },
       colors: {
         blue: "var(--color-blue)",
