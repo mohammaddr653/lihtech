@@ -11,9 +11,7 @@ import {
 } from "@heroui/navbar";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
-import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
@@ -28,7 +26,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand
           as="li"
-          className="gap-3 max-w-fit bg-transparent border border-border p-2 rounded-full"
+          className="gap-3 max-w-fit shadow-2xl bg-transparent border border-border p-2 rounded-full"
         >
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
@@ -37,7 +35,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent justify="center">
-        <ul className="hidden lg:flex gap-6 border border-border rounded-full p-4 justify-center items-center">
+        <ul className="hidden lg:flex shadow-2xl gap-6 border border-border rounded-full p-4 justify-center items-center">
           {siteConfig.navItems.map((item) => {
             const isActive = pathname === item.href;
 
@@ -63,17 +61,12 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2 bg-transparent border border-border p-4 rounded-full">
+        <NavbarItem className="hidden shadow-2xl sm:flex gap-2 bg-transparent border border-border p-4 rounded-full">
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        {/* <NavbarItem>
-          <Button radius="full" color="primary" variant="shadow">
-            تماس با فروش
-          </Button>
-        </NavbarItem> */}
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
