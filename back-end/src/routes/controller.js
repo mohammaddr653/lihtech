@@ -1,13 +1,10 @@
 //controller
 const debug = require("debug")("app");
 const { validationResult } = require("express-validator");
-const User = require("./../models/user");
 const serverResponse = require("../helpers/serverResponse");
 const deleteWrapper = require("../helpers/deleteWrapper");
 module.exports = class {
-  constructor() {
-    this.User = User; //so we can access the User model in all controllers that extend this controller
-  }
+  constructor() {}
 
   //this is the structure of our response to requests
   response({ res, message, code = 200, data }) {
