@@ -1,8 +1,20 @@
-node_modules
-uploads
-
-# note:remove client folder from gitignore before deploy to liara . because we need it
-client
+node_modules/
+coverage/
+dist/
+build/
 
 .env
-logfile.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+logs/
+*.log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+.vscode/
+
+.DS_Store
