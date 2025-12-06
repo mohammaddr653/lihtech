@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="en" dir="rtl">
       <head />
       <body
         className={clsx(
@@ -53,11 +53,11 @@ export default function RootLayout({
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
-                href="https://heroui.com?utm_source=next-app-template"
+                href="https://github.com/MeruLeo"
                 title="heroui.com homepage"
               >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">HeroUI</p>
+                <span className="text-default-600">ساخته شده توسط</span>
+                <p className="text-primary">امیرعلی الله وردی</p>
               </Link>
             </footer>
           </div>
