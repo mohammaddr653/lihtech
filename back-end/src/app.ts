@@ -5,10 +5,11 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 
 import { ENV } from '#src/config/env.js';
-import { morganMiddleware } from '#src/middlewares/logger.js';
+import { logger, morganMiddleware } from '#src/middlewares/logger.js';
 import { AppError, errorHandler } from '#src/middlewares/error-handler.js';
 import userRoutes from '#src/modules/user/user.route.js';
 import orderRoutes from '#src/modules/order/order.route.js';
+import mongoose from 'mongoose';
 
 export const createApp = (): Express => {
   const app = express();
@@ -28,6 +29,11 @@ export const createApp = (): Express => {
   app.use(compression());
 
   app.use(morganMiddleware);
+
+  mongoose
+    .connect(ENV.CONNECTION_STRING)
+    .then(() => logger.info('connected to mongodb'))
+    .catch(() => logger.info('could not connect'));
 
   app.use('/api', userRoutes);
   app.use('/api', orderRoutes);
