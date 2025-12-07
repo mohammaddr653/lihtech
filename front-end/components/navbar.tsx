@@ -22,11 +22,16 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <HeroUINavbar maxWidth="sm" className="bg-transparent" position="sticky">
+    <HeroUINavbar
+      maxWidth="full"
+      className="bg-transparent"
+      isBordered
+      position="sticky"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand
           as="li"
-          className="gap-3 max-w-fit shadow-2xl bg-transparent border border-border p-2 rounded-full"
+          className="gap-3 max-w-fit shadow-2xl bg-transparent"
         >
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
@@ -35,7 +40,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent justify="center">
-        <ul className="hidden lg:flex shadow-2xl gap-6 border border-border rounded-full p-4 justify-center items-center">
+        <ul className="hidden lg:flex shadow-2xl gap-6 justify-center items-center">
           {siteConfig.navItems.map((item) => {
             const isActive = pathname === item.href;
 
@@ -61,7 +66,7 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden shadow-2xl sm:flex gap-2 bg-transparent border border-border p-4 rounded-full">
+        <NavbarItem className="hidden shadow-2xl sm:flex gap-2">
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
           </Link>

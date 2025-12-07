@@ -12,6 +12,7 @@ export const MainText = ({ type, children }: IMainText) => {
     <Tag
       className={`${title({
         size: type === "super" ? "lg" : "sm",
+        color: type === "super" ? "primary" : "foreground",
       })} text-center`}
     >
       {children}
