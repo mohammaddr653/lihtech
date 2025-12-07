@@ -1,21 +1,11 @@
-const mongoose = require('mongoose');
-const timestamp = require('mongoose-timestamp');
+import mongoose from 'mongoose';
 
-const orderSchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
+const orderSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    phone: { type: String, required: true },
+    note: { type: String },
   },
-  status: {
-    type: String,
-    enum: ['expired', 'canceled', 'pending', 'check', 'paid'],
-  },
-  pendingExpire: { type: Date, default: null }, // انقضای وضعیت pending
-  totalPrice: { type: Number, required: true },
-  authority: { type: String, default: '' }, //شناسه پرداخت که از زرین پال میگیریم
-  authExpire: { type: Date, default: null }, // انقضای authority
-  referenceId: { type: String, default: '' }, //شناسه تراکنش که بعد از تایید تراکنش میگیریم
-});
-orderSchema.plugin(timestamp);
-module.exports = mongoose.model('Order', orderSchema);
+  { timestamps: true },
+);
+export default mongoose.model('Order', orderSchema);
