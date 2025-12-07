@@ -8,6 +8,8 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/navbar";
 import { sfBold, sfLight, sfMed } from "@/config/fonts";
+import { BGPattern } from "@/components/bg-pattern";
+import { Spotlight } from "@/components/ui/spotlight-new";
 
 export const metadata: Metadata = {
   title: {
@@ -45,6 +47,35 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
+            <div className="h-screen w-full flex md:items-center md:justify-center antialiased absolute overflow-hidden">
+              <Spotlight
+                gradientFirst="
+    radial-gradient(
+      68.54% 68.72% at 55.02% 31.46%,
+      rgba(214, 228, 217, 0.18) 0%,     /* نرم و واضح */
+      rgba(123, 155, 126, 0.10) 50%,    /* میانی متعادل */
+      rgba(82, 104, 89, 0) 80%          /* محو شونده طبیعی */
+    )
+  "
+                gradientSecond="
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(214, 228, 217, 0.14) 0%,     /* قابل‌دید */
+      rgba(123, 155, 126, 0.06) 80%,    /* هنوز ملایم */
+      transparent 100%
+    )
+  "
+                gradientThird="
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(214, 228, 217, 0.10) 0%,     /* روشن ملایم */
+      rgba(82, 104, 89, 0.05) 80%,      /* نرم */
+      transparent 100%
+    )
+  "
+              />
+            </div>
+            <BGPattern variant="dots" mask="fade-edges" />
             <Navbar />
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
               {children}
@@ -56,8 +87,7 @@ export default function RootLayout({
                 href="https://github.com/MeruLeo"
                 title="heroui.com homepage"
               >
-                <span className="text-default-600">ساخته شده توسط</span>
-                <p className="text-primary">امیرعلی الله وردی</p>
+                <span className="text-default-600">همه حقوق محفوظ است</span>
               </Link>
             </footer>
           </div>

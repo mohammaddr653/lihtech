@@ -22,7 +22,7 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <HeroUINavbar maxWidth="sm" position="sticky">
+    <HeroUINavbar maxWidth="sm" className="bg-transparent" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand
           as="li"
