@@ -6,7 +6,7 @@ import { CreateOrderInput } from './order.schema.js';
 export const orderController = {
   // POST /orders
   async createOrder(req: Request<{}, {}, CreateOrderInput['body']>, res: Response) {
-    const order = await orderService.createOrder(req.body);
+    await orderService.createOrder(req.body);
     res.status(201).json({
       status: 'success',
     });
