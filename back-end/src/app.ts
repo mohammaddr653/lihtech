@@ -7,7 +7,6 @@ import hpp from 'hpp';
 import { ENV } from '#src/config/env.js';
 import { logger, morganMiddleware } from '#src/middlewares/logger.js';
 import { AppError, errorHandler } from '#src/middlewares/error-handler.js';
-import userRoutes from '#src/modules/user/user.route.js';
 import orderRoutes from '#src/modules/order/order.route.js';
 import mongoose from 'mongoose';
 
@@ -33,9 +32,8 @@ export const createApp = (): Express => {
   mongoose
     .connect(ENV.CONNECTION_STRING)
     .then(() => logger.info('connected to mongodb'))
-    .catch(() => logger.info('could not connect'));
+    .catch(() => logger.error('could not connect'));
 
-  app.use('/api', userRoutes);
   app.use('/api', orderRoutes);
 
   app.use((_req, _res, next) => {

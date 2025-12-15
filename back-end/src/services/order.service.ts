@@ -1,15 +1,14 @@
 import sendEmail from '#src/mails/newOrder.js';
-import Order from './order.model.js';
-import { CreateOrderDto } from './order.types.js';
-import { Request } from 'express';
+import Order from '../models/order.model.js';
+import { CreateOrderDto } from '../types/order.types.js';
 
 export const orderService = {
   // Create order
-  async createOrder(req: Request) {
+  async createOrder(data: CreateOrderDto) {
     const newOrder: CreateOrderDto = {
-      name: req.body.name,
-      phone: req.body.phone,
-      note: req.body.note,
+      name: data.name,
+      phone: data.phone,
+      note: data.note,
     };
     const saveOp = await Order.create(newOrder);
     let content = `
