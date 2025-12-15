@@ -7,7 +7,7 @@ export interface IUpTitle {
 
 export const UpTitle = ({ icon, content }: IUpTitle) => {
   return (
-    <span className="flex items-center border border-border p-1 rounded-full gap-2">
+    <span className="flex mb-4 items-center border border-border p-1 rounded-full gap-2">
       <span className="bg-gray4 border border-border p-1 text-gray rounded-full">
         {icon}
       </span>

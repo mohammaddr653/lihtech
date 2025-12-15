@@ -46,33 +46,33 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex flex-col">
             <div className="h-screen w-full flex md:items-center md:justify-center antialiased absolute overflow-hidden">
               <Spotlight
                 gradientFirst="
-    radial-gradient(
-      68.54% 68.72% at 55.02% 31.46%,
-      rgba(214, 228, 217, 0.18) 0%,     /* نرم و واضح */
-      rgba(123, 155, 126, 0.10) 50%,    /* میانی متعادل */
-      rgba(82, 104, 89, 0) 80%          /* محو شونده طبیعی */
-    )
-  "
+                  radial-gradient(
+                    68.54% 68.72% at 55.02% 31.46%,
+                    rgba(214, 228, 217, 0.18) 0%,
+                    rgba(123, 155, 126, 0.10) 50%, 
+                    rgba(82, 104, 89, 0) 80% 
+                  )
+                "
                 gradientSecond="
-    radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(214, 228, 217, 0.14) 0%,     /* قابل‌دید */
-      rgba(123, 155, 126, 0.06) 80%,    /* هنوز ملایم */
-      transparent 100%
-    )
-  "
+                  radial-gradient(
+                    50% 50% at 50% 50%,
+                    rgba(214, 228, 217, 0.14) 0%,
+                    rgba(123, 155, 126, 0.06) 80%,
+                    transparent 100%
+                  )
+                "
                 gradientThird="
-    radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(214, 228, 217, 0.10) 0%,     /* روشن ملایم */
-      rgba(82, 104, 89, 0.05) 80%,      /* نرم */
-      transparent 100%
-    )
-  "
+                  radial-gradient(
+                    50% 50% at 50% 50%,
+                    rgba(214, 228, 217, 0.10) 0%,
+                    rgba(82, 104, 89, 0.05) 80%,
+                    transparent 100%
+                  )
+                "
               />
             </div>
             <BGPattern variant="dots" mask="fade-edges" />
@@ -85,7 +85,7 @@ export default function RootLayout({
                 isExternal
                 className="flex items-center gap-1 text-current"
                 href="https://github.com/MeruLeo"
-                title="heroui.com homepage"
+                title="LihTech on GitHub"
               >
                 <span className="text-default-600">همه حقوق محفوظ است</span>
               </Link>

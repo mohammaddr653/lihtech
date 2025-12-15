@@ -13,7 +13,7 @@ export const MainText = ({ type, children }: IMainText) => {
       className={`${title({
         size: type === "super" ? "lg" : "sm",
         color: type === "super" ? "primary" : "foreground",
-      })} text-center`}
+      })} text-center sm:h-[80px]`}
     >
       {children}
     </Tag>

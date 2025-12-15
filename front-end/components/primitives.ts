@@ -10,7 +10,8 @@ export const title = tv({
       cyan: "from-[#00b7fa] to-[#01cfea]",
       green: "from-[#6FEE8D] to-[#17c964]",
       pink: "from-[#FF72E1] to-[#F54C7A]",
-      foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
+      foreground:
+        "dark:from-[#FFFFFF] dark:to-[#4B4B4B] from-[#000000] to-[#7A7A7A]",
       primary:
         "dark:from-[#526859] dark:via-[#d6e4d9] dark:to-[#526859] from-[#0a0a0a] via-[#526859] to-[#0a0a0a]",
     },
@@ -38,8 +39,7 @@ export const title = tv({
         "foreground",
         "primary",
       ],
-      class:
-        "bg-clip-text text-transparent bg-gradient-to-r sm:h-[70px] h-[50px]",
+      class: "bg-clip-text text-transparent bg-gradient-to-r",
     },
   ],
 });
