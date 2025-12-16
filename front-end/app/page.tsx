@@ -1,7 +1,14 @@
 import { HeroInput } from "@/components/home/hero-app";
 import { Section } from "@/components/section";
 import { Title } from "@/components/title/title";
-import { Component, UsersRound } from "lucide-react";
+import { GlowingCard } from "@/components/ui/card/glowing-card";
+import {
+  Component,
+  FileSearchCorner,
+  Hexagon,
+  HomeIcon,
+  UsersRound,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -36,7 +43,13 @@ export default function Home() {
             }}
           />
         }
-        children={`hi`}
+        children={
+          <GlowingCard
+            icon={
+              <FileSearchCorner strokeWidth={0.5} size={150} color="#526859" />
+            }
+          />
+        }
       />
     </section>
   );
