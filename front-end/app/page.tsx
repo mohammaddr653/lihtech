@@ -1,3 +1,4 @@
+import { CallForm } from "@/components/home/call-form";
 import { HeroInput } from "@/components/home/hero-app";
 import { Section } from "@/components/section";
 import { Title } from "@/components/title/title";
@@ -13,6 +14,7 @@ import {
   FileSearchCorner,
   Hexagon,
   HomeIcon,
+  PhoneCall,
   UsersRound,
 } from "lucide-react";
 
@@ -103,6 +105,26 @@ export default function Home() {
             ))}
           </ul>
         }
+      />
+
+      {/* Call */}
+      <Section
+        title={
+          <Title
+            upTitle={{
+              icon: <PhoneCall />,
+              content: "دریافت مشاوره یا ثبت سفارش",
+            }}
+            mainText={{
+              type: "normal",
+              children: "داده دارید، اما دید ندارید؟",
+            }}
+            description={{
+              text: "ما کمک می‌کنیم داده‌هایتان به تصمیم‌های دقیق و قابل اجرا تبدیل شوند.",
+            }}
+          />
+        }
+        children={<CallForm />}
       />
     </section>
   );
