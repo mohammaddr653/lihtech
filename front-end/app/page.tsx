@@ -1,11 +1,14 @@
 import { HeroInput } from "@/components/home/hero-app";
 import { Section } from "@/components/section";
 import { Title } from "@/components/title/title";
+import { AdvantageCard } from "@/components/ui/card/advantage-card";
 import { GlowingCard } from "@/components/ui/card/glowing-card";
 import { ServiceCard } from "@/components/ui/card/service-card";
+import { ourAdvantage } from "@/config/home/our-advantage";
 import { ourServices } from "@/config/home/our-services";
 import {
   BriefcaseBusiness,
+  CircleQuestionMark,
   Component,
   FileSearchCorner,
   Hexagon,
@@ -57,6 +60,7 @@ export default function Home() {
         }
       />
 
+      {/* Our services */}
       <Section
         title={
           <Title
@@ -71,6 +75,31 @@ export default function Home() {
           <ul className="flex gap-4 mt-8">
             {ourServices.map((os, i) => (
               <ServiceCard key={i} {...os} />
+            ))}
+          </ul>
+        }
+      />
+
+      {/* Why us ? */}
+      <Section
+        dir="horizontal"
+        title={
+          <Title
+            upTitle={{
+              icon: <CircleQuestionMark />,
+              content: "چرا ما؟",
+            }}
+            mainText={{
+              type: "normal",
+              children: "دلایلی که باید مارو انتخاب کنید",
+            }}
+            description={{ text: "تفاوت ما در نگاه تحلیلی است" }}
+          />
+        }
+        children={
+          <ul className="flex flex-col gap-4 mt-8">
+            {ourAdvantage.map((oa, i) => (
+              <AdvantageCard key={i} {...oa} />
             ))}
           </ul>
         }
