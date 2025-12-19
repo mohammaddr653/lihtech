@@ -20,10 +20,6 @@ export const siteConfig = {
       label: "ارتباط با ما",
       href: "/contact",
     },
-    {
-      label: "مستندات",
-      href: "/docs",
-    },
   ],
   links: {
     github: "https://github.com/mohammaddr653/lihtech",

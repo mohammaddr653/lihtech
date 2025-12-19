@@ -7,16 +7,11 @@ export const CallForm = () => {
   return (
     <div className="flex flex-col shadow-2xl gap-2 bg-gray4 p-2 rounded-3xl border border-border">
       <section className="flex gap-2">
-        <Input variant="faded" radius="full" placeholder="نام و نام خانوادگی" />{" "}
-        <NumberInput
-          variant="faded"
-          hideStepper
-          placeholder="شماره تماس"
-          radius="full"
-        />
+        <Input radius="full" placeholder="نام و نام خانوادگی" />{" "}
+        <NumberInput hideStepper placeholder="شماره تماس" radius="full" />
       </section>
       <section>
-        <Textarea radius="full" variant="faded" placeholder="درخواست شما" />
+        <Textarea radius="full" placeholder="درخواست شما" />
       </section>
       <Button color="primary" className="mt-2" radius="full">
         ثبت درخواست
