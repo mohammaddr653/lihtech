@@ -2,7 +2,10 @@ import { HeroInput } from "@/components/home/hero-app";
 import { Section } from "@/components/section";
 import { Title } from "@/components/title/title";
 import { GlowingCard } from "@/components/ui/card/glowing-card";
+import { ServiceCard } from "@/components/ui/card/service-card";
+import { ourServices } from "@/config/home/our-services";
 import {
+  BriefcaseBusiness,
   Component,
   FileSearchCorner,
   Hexagon,
@@ -13,6 +16,7 @@ import {
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      {/* Hero section */}
       <Section
         title={
           <Title
@@ -29,6 +33,7 @@ export default function Home() {
         children={<HeroInput />}
       />
 
+      {/* Who is we ? */}
       <Section
         title={
           <Title
@@ -49,6 +54,25 @@ export default function Home() {
               <FileSearchCorner strokeWidth={0.5} size={150} color="#526859" />
             }
           />
+        }
+      />
+
+      <Section
+        title={
+          <Title
+            upTitle={{ icon: <BriefcaseBusiness />, content: "خدمات ما" }}
+            mainText={{
+              children: "ما چه کارهایی انجام میدهیم ؟",
+              type: "normal",
+            }}
+          />
+        }
+        children={
+          <ul className="flex gap-4 mt-8">
+            {ourServices.map((os, i) => (
+              <ServiceCard key={i} {...os} />
+            ))}
+          </ul>
         }
       />
     </section>

@@ -13,7 +13,7 @@ export const Title = ({ upTitle, mainText, description }: ITitle) => {
     <div className="flex justify-center items-center flex-col">
       <UpTitle {...upTitle} />
       <MainText {...mainText} />
-      <Description {...description} />
+      {description ? <Description {...description} /> : null}
     </div>
   );
 };
