@@ -10,7 +10,7 @@ export interface ITitle {
 
 export const Title = ({ upTitle, mainText, description }: ITitle) => {
   return (
-    <div className="flex justify-center items-center flex-col">
+    <div className="flex justify-center gap-6 items-center flex-col">
       <UpTitle {...upTitle} />
       <MainText {...mainText} />
       {description ? <Description {...description} /> : null}
