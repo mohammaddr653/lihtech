@@ -10,7 +10,7 @@ export interface IServiceCard {
 
 export const ServiceCard = ({ icon, title, description }: IServiceCard) => {
   return (
-    <li className="relative -top-12 gap-8 -z-10 backdrop-blur-3xl flex flex-col items-center size-60 justify-center overflow-hidden rounded-4xl border border-border px-4 shadow shadow-black/10 ring-black/5 md:size-100 dark:shadow-white/10 dark:ring-white/5">
+    <li className="relative w-full -top-12 gap-8 -z-10 backdrop-blur-3xl flex flex-col items-center size-60 justify-center overflow-hidden rounded-4xl border border-border px-4 shadow shadow-black/10 ring-black/5 md:size-100 dark:shadow-white/10 dark:ring-white/5">
       <BGPattern variant="dots" mask="fade-bottom" />
       <header className="flex flex-col justify-center items-center">
         <Ripple size={64} numCircles={4}>

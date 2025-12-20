@@ -74,7 +74,7 @@ export default function Home() {
           />
         }
         children={
-          <ul className="flex gap-4 mt-8">
+          <ul className="flex flex-col sm:flex-row gap-4 mt-8">
             {ourServices.map((os, i) => (
               <ServiceCard key={i} {...os} />
             ))}
