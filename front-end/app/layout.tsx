@@ -10,6 +10,9 @@ import { Navbar } from "@/components/navbar";
 import { sfBold, sfLight, sfMed } from "@/config/fonts";
 import { BGPattern } from "@/components/bg-pattern";
 import { Spotlight } from "@/components/ui/spotlight-new";
+import { AdvantageCard } from "@/components/ui/card/advantage-card";
+import { MainText } from "@/components/title/main-text";
+import { Description } from "@/components/title/description";
 
 export const metadata: Metadata = {
   title: {
@@ -80,6 +83,11 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
               {children}
             </main>
+            <footer className="text-center flex flex-col justify-center items-center border-t border-border p-4">
+              <MainText type="normal" children="به خانواده ما بپیوندید" />
+              <Description text="در مجموعه ما از همه استقبال میشود ، کسب و کار خود را به ما  بسپارید" />
+              <ul>{/* <AdvantageCard icon={<}/> */}</ul>
+            </footer>
           </div>
         </Providers>
       </body>
